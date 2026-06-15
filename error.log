@@ -1,0 +1,7 @@
+2026-06-03T01:47:29.335Z - SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at readApprovedPartnerships (C:\Users\Usuario\Documents\Projetos\Sistema de parceria\index.js:74:27)
+    at saveApprovedPartnership (C:\Users\Usuario\Documents\Projetos\Sistema de parceria\index.js:89:18)
+    at approvePartnership (C:\Users\Usuario\Documents\Projetos\Sistema de parceria\index.js:291:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Client.<anonymous> (C:\Users\Usuario\Documents\Projetos\Sistema de parceria\index.js:665:13)

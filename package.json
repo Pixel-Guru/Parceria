@@ -1,0 +1,15 @@
+{
+  "name": "discord-partnership-bot",
+  "version": "1.0.0",
+  "description": "Bot para gerenciamento de parcerias no Discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.0.0",
+    "mongodb": "^7.2.0"
+  },
+  "author": "Seu Nome",
+  "license": "MIT"
+}
