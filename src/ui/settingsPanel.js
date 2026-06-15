@@ -87,7 +87,6 @@ function buildSettingsPanel(settings, guildName = 'Servidor') {
     );
 
     const systemRow = new ActionRowBuilder().addComponents(
-        new ButtonBuilder().setCustomId('settings:open:presence').setLabel('Meu Bot').setStyle(ButtonStyle.Secondary),
         new ButtonBuilder().setCustomId('settings:open:behavior').setLabel('Outros').setStyle(ButtonStyle.Secondary),
     );
 
@@ -176,14 +175,6 @@ function buildSettingsModal(section, settings) {
         modal.setTitle('Textos publicos').addComponents(
             textInput({ id: 'button_label', label: 'Nome do botao de parceria', value: settings.texts.partnershipButtonLabel, placeholder: 'Realizar parceria', required: true, maxLength: 80 }),
             textInput({ id: 'verified_phrase', label: 'Frase no post aprovado', value: settings.texts.verifiedPhrase, style: TextInputStyle.Paragraph, required: true, maxLength: 500 }),
-        );
-    }
-
-    if (section === 'presence') {
-        modal.setTitle('Presenca do bot').addComponents(
-            textInput({ id: 'presence_name', label: 'Texto do status do bot', value: settings.texts.presenceName, required: true, maxLength: 100 }),
-            textInput({ id: 'presence_url', label: 'Link do status streaming', value: settings.texts.presenceUrl, required: true, maxLength: 200 }),
-            textInput({ id: 'presence_status', label: 'online, idle ou dnd', value: settings.texts.presenceStatus, placeholder: 'online', required: true, maxLength: 20 }),
         );
     }
 

@@ -29,9 +29,6 @@ function createDefaultGuildSettings(guildId) {
             approvedDm: 'Sua parceria foi aprovada! O convite foi publicado no canal de servidores verificados.',
             rejectedDm: 'Sua solicitacao de parceria foi rejeitada.\n\nMotivo: {motivo}\n\nVoce pode revisar as informacoes e tentar novamente.',
             verifiedPhrase: '✦ Este servidor está no Programa de Servidores Verificados do Sam',
-            presenceName: 'SamBot',
-            presenceUrl: 'https://discord.com/oauth2/authorize?scope=bot+applications.commands',
-            presenceStatus: 'online',
         },
         behavior: {
             allowPublicSubmissions: true,

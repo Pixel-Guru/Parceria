@@ -1,4 +1,3 @@
-const { ActivityType } = require('discord.js');
 const { registerAllGuildCommands, registerGuildCommands } = require('./commands');
 const { loadApplicationOwnerIds } = require('./owner');
 const { handleInteraction } = require('../features/router');
@@ -22,17 +21,6 @@ function registerEvents(context) {
 
             // Comandos por servidor atualizam rapido e facilitam teste.
             await registerAllGuildCommands(client);
-
-            client.user.setPresence({
-                activities: [
-                    {
-                        name: 'SamBot',
-                        type: ActivityType.Streaming,
-                        url: 'https://discord.com/oauth2/authorize?scope=bot+applications.commands',
-                    },
-                ],
-                status: 'online',
-            });
 
             console.log(`Bot online como ${client.user.tag}.`);
         } catch (error) {

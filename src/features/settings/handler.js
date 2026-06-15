@@ -1,7 +1,6 @@
 const { buildSettingsModal, buildSettingsPanel } = require('../../ui/settingsPanel');
 const { parseIdList, parseSingleId } = require('../../utils/ids');
 const { canConfigure } = require('../../utils/permissions');
-const { applyPresence } = require('../../utils/presence');
 const { replySafely } = require('../../utils/discord');
 const { parseBooleanText } = require('../../utils/text');
 
@@ -90,16 +89,6 @@ function settingsPatchFromModal(section, interaction, settings) {
         };
     }
 
-    if (section === 'presence') {
-        return {
-            texts: {
-                presenceName: fields.getTextInputValue('presence_name'),
-                presenceUrl: fields.getTextInputValue('presence_url'),
-                presenceStatus: fields.getTextInputValue('presence_status').trim().toLowerCase(),
-            },
-        };
-    }
-
     if (section === 'behavior') {
         return {
             behavior: {
@@ -153,11 +142,6 @@ async function handleSettingsInteraction(context, interaction) {
         const section = interaction.customId.split(':')[2];
         const patch = settingsPatchFromModal(section, interaction, settings);
         const updatedSettings = await context.repositories.settings.update(interaction.guildId, patch);
-
-        // Presenca precisa ser aplicada no client imediatamente.
-        if (section === 'presence') {
-            applyPresence(context.client, updatedSettings);
-        }
 
         await interaction.reply({
             content: 'Configuracao salva.',

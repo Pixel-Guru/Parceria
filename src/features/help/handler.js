@@ -20,7 +20,7 @@ function buildHelpEmbed(guildName = 'Servidor') {
             '4. **Aprovadores**: quem toma a decisao final.',
             '5. **/parceria**: quem pode publicar o botao de solicitacao.',
             '6. **DMs/Textos**: mensagens enviadas e frase do post aprovado.',
-            '7. **Meu Bot/Outros**: status do bot e liga/desliga de regras.',
+            '7. **Outros**: liga/desliga de regras.',
             '',
             '**Como pegar IDs**',
             'Ative o modo desenvolvedor no Discord, clique com o botao direito em canal/cargo/usuario e copie o ID.',
